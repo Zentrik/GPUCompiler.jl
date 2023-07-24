@@ -423,7 +423,7 @@ function nvvm_reflect!(fun::LLVM.Function)
         # handle possible cases
         # XXX: put some of these property in the compiler job?
         #      and/or first set the "nvvm-reflect-*" module flag like Clang does?
-        fast_math = Base.JLOptions().fast_math == 1
+        fast_math = true # Base.JLOptions().fast_math == 1
         # NOTE: we follow nvcc's --use_fast_math
         reflect_val = if reflect_arg == "__CUDA_FTZ"
             # single-precision denormals support
